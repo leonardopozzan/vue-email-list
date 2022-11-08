@@ -20,7 +20,7 @@
             <div class="d-flex align-items-center justify-content-center">
                 <input type="number" class="fs-5" v-model.number="numb">
                 <button class="btn btn-dark  mx-3" @click="generateMails()">Generate</button>
-                <button class="btn btn-dark" @click="generateMail()">Add Mail</button>
+                <button class="btn btn-dark" @click="addMail()">Add Mail</button>
             </div>
             <div class="box-ul">
                 <ul class="p-0" v-if="mails.length >= numb">
