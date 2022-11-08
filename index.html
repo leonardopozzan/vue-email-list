@@ -10,9 +10,23 @@
     <script src='https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js'></script>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src='js/script.js' defer></script>
-    <title>Document</title>
+    <title>Generate mail</title>
 </head>
 
 <body>
-    
+    <div id="app">
+        <div class="my-container">
+            <h1 class="mb-3">Inserisci il numeri di mail da generare</h1>
+            <div class="d-flex align-items-center justify-content-center">
+                <input type="number" class="fs-5" v-model.number="numb">
+                <button class="btn btn-dark  mx-3" @click="generateMails()">Generate</button>
+                <button class="btn btn-dark" @click="generateMail()">Add Mail</button>
+            </div>
+            <div class="box-ul">
+                <ul class="p-0" v-if="mails.length >= numb">
+                    <li v-for="mail in mails" class="p-2" ref="adress">{{mail}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
